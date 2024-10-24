@@ -1,0 +1,110 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: rgb(242,224,210);
+    background: radial-gradient(circle, rgba(242,224,210,1) 5%, rgba(235,172,210,1) 62%, rgba(36,23,0,1) 100%);
+    padding: 20px;
+}
+
+header {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #00ddff;
+    color: white;
+    border: none;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.game-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    padding: 20px;
+    background-image: radial-gradient(circle, #d9e6f9, #d3ddfd, #d5d2fe, #ddc6fa, #e9b8f1);
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(185, 121, 245, 0.1);
+    max-width: 500px; 
+}
+
+.card {
+    width: 100px;
+    height: 100px;
+    background-color: #e1b2f5;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    transform: rotateY(180deg);
+    transition: transform 0.5s, background-color 0.5s;
+}
+
+.card.flipped {
+    background-color: #ffffff;
+    color: #b1d0f1;
+    transform: rotateY(0);
+}
+
+.card.matched {
+    background-color: #57dc76;
+    pointer-events: none;
+}
+
+/* Responsive Design for Smaller Screens (Tablets) */
+@media (max-width: 768px) {
+    .game-board {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 400px;
+    }
+
+    .card {
+        width: 90px;
+        height: 90px;
+    }
+}
+
+/* Responsive Design for Mobile Devices */
+@media (max-width: 480px) {
+    .game-board {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 300px;
+    }
+
+    .card {
+        width: 80px;
+        height: 80px;
+        font-size: 1.5rem;
+    }
+
+    button {
+        padding: 8px 12px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+}
